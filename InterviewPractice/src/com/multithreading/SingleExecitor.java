@@ -8,10 +8,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class SingleExecitor {
-	//single thead creation if your create multiple thread by using runbale of callable the use the existing thread every time;
+	//single thread creation if your create multiple thread by using runnable or callable the use the existing thread every time
+	// if you want to thread executor then use the newSingleThreadScheduledExecutor(size)
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		
-	
+	System.out.println(Thread.currentThread().getName());
 	ExecutorService ses= Executors.newSingleThreadExecutor();
 	
 	Runnable thr1= ()-> System.out.println("runnable..."+ Thread.currentThread().getName());
@@ -28,7 +29,7 @@ public class SingleExecitor {
 	//it throw this java.util.concurrent.RejectedExecutionException after you want to start the thread.
 	// in shutdown() use it will start the thread that just before the shutdown() call our example is thr4 after that
 	//  same exeception throw.
-	ses.shutdownNow();
+	//ses.shutdownNow();
 	Future<String> t=ses.submit(thr2);
 	Future<String> t2=ses.submit(thr2);
 	System.out.println(t.get());
