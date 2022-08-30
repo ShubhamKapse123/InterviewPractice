@@ -35,6 +35,8 @@ public class SingleExecitor {
 	System.out.println(t.get());
 	System.out.println(t2.get());
 	
+	 ses.shutdown();
+	
 	
 	}
 	

@@ -1,18 +1,19 @@
 package com.serilization;
 
-public  class Human {
-private final String body;
+import java.io.Serializable;
 
-
-
-public Human(String body) {
-	super();
-	this.body = body;
-}
+public  class Human implements Serializable{
+private String body;
 
 
 
 public String getBody() {
 	return body;
+}
+
+
+
+public void setBody(String body) {
+	this.body = body;
 }
 }

@@ -1,29 +1,24 @@
 package com.serilization;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.HashMap;
 
 public class RunMain {
-public static void main(String[] args) {
-//	HashMap<Human,String> demo= new HashMap<>();
-//	
-//	Human h= new Human("M");
-//	
-//	demo.put(h,"Man");
-//	
-//	
-//	System.out.println(demo.get(h));
+public static void main(String[] args) throws IOException {
 	
-	String k="te";
+	Human h= new Human();
+	h.setBody("six pack wali");
 	
-	String ki=new String("test").intern();
+	FileOutputStream fileout= new FileOutputStream("test.txt");
 	
-	if(k==ki) {
-		System.out.println("true");
-	}
+	ObjectOutputStream oos= new ObjectOutputStream(fileout);
 	
-	System.out.println(k.hashCode());
-	System.out.println(ki.hashCode());
+	oos.writeObject(h);
 	
-	
+	oos.flush();
+	oos.close();
 }
 }
