@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 public class DummyHuman  {
 
 public static void main(String[] args) throws IOException, ClassNotFoundException {
-		// here Deserilization process
+		// here Deserilization process using IOStream
 		FileInputStream fileout= new FileInputStream("test.txt");
 		
 		ObjectInputStream oos= new ObjectInputStream(fileout);
