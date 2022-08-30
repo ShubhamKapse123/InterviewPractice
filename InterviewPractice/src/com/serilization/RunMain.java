@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 
 public class RunMain {
-	//this is the serilization process IOStream 
+	//this is the Serilization process IOStream 
 public static void main(String[] args) throws IOException {
 	
 	Human h= new Human();
